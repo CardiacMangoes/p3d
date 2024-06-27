@@ -1,12 +1,17 @@
-# Pa3d
+# P3d
+Perceptive 3D (interim clean title)
 
+## Setting up Conda Enviroment
 
-# Setting up the environment
+Create a conda environment
 
-Create a conda environment and install Pa3d.
+```bash
+conda create --name p3d -y python=3.8
+conda activate p3d
+python -m pip install --upgrade pip
+```
 
+In this directory run
 ```bash
 pip install -e .
 ```
-
-# Download Dataset
