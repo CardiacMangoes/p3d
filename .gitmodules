@@ -1,0 +1,21 @@
+[submodule "submodules/OpenLRM"]
+	path = submodules/OpenLRM
+	url = https://github.com/3DTopia/OpenLRM.git
+[submodule "submodules/Zero123plus"]
+	path = submodules/Zero123plus
+	url = https://github.com/SUDO-AI-3D/zero123plus.git
+[submodule "submodules/ImageDream"]
+	path = submodules/ImageDream
+	url = https://github.com/bytedance/ImageDream.git
+[submodule "submodules/GenerativeModels"]
+	path = submodules/GenerativeModels
+	url = https://github.com/Stability-AI/generative-models.git
+[submodule "submodules/InstantMesh"]
+	path = submodules/InstantMesh
+	url = https://github.com/TencentARC/InstantMesh.git
+[submodule "submodules/TripoSR"]
+	path = submodules/TripoSR
+	url = https://github.com/VAST-AI-Research/TripoSR.git
+[submodule "submodules/V3D"]
+	path = submodules/V3D
+	url = https://github.com/heheyas/V3D.git

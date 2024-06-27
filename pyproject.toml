@@ -1,0 +1,35 @@
+[project]
+name = "p3d"
+description = "Finding the odd View Out"
+version = "0.1.0"
+
+dependencies = [
+    "black",
+    "mediapy",
+    "ipykernel",
+    "rich>=12.5.1",
+    "scikit-learn",
+    "torchtyping",
+    "tyro>=0.4.0",
+    "opencv-python",
+    "colour-science",
+    "tqdm",
+    "scikit-image",
+    "ffmpeg",
+    "torch",
+    "torchvision",
+    "roma",
+    "gradio",
+    "matplotlib",
+    "tqdm",
+    "opencv-python",
+    "scipy",
+    "einops",
+    "trimesh",
+    "tensorboard",
+    "pyglet<2.0.0",
+    "accelerate",
+]
+
+[tool.setuptools.packages.find]
+include = ["p3d"]
