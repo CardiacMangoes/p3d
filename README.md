@@ -6,7 +6,7 @@ Perceptive 3D (interim clean title)
 Create a conda environment
 
 ```bash
-conda create --name p3d -y python=3.8
+conda create --name p3d -y python=3.10
 conda activate p3d
 python -m pip install --upgrade pip
 ```

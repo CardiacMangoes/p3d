@@ -37,7 +37,7 @@ def main(
     mesh.vertices /= np.max(np.abs(mesh.vertices))
 
     server = viser.ViserServer(port=7016)
-    # server.request_share_url()
+    server.request_share_url()
 
     grid_button = server.gui.add_button("Render Uniform Samples")
     rand_button = server.gui.add_button("Render Random Samples")

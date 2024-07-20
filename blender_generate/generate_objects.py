@@ -142,8 +142,9 @@ if __name__ == '__main__':
                 # save a single object scaled and located at the origin
                 scale_and_center_object()
                 object_name = save_string%(params['big_shapeseed'], i_subdivisions, big_twist, med_twist )
-                save_name = os.path.join(save_location,  object_name + '.blend')
-                if save_objects: bpy.ops.wm.save_as_mainfile(filepath=save_name)
+                save_name = os.path.join(save_location,  object_name + '.obj')
+                if save_objects: bpy.ops.export_scene.obj(filepath=save_name, use_selection=True)
+    
     
     stimulus_info['%003d'%params['big_shapeseed']] = params
     metadata_filename = os.path.join(save_location, 'metadata.pickle')
