@@ -1,5 +1,5 @@
 class NovelViewSynthesisModel:
-    def __init__(self, images, device='cpu'):
+    def __init__(self, device='cpu'):
         self.device = device
 
         self.model = self.load_model()

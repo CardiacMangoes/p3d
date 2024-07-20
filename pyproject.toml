@@ -29,6 +29,10 @@ dependencies = [
     "tensorboard",
     "pyglet<2.0.0",
     "accelerate",
+    "viser>=0.2.3",
+    "trimesh",
+    "lpips",
+    "transformers"
 ]
 
 [tool.setuptools.packages.find]
