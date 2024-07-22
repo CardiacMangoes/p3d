@@ -64,14 +64,17 @@ def main(
 
         ttl_phis = 0
         for i, theta_ in enumerate(thetas):
-            num_phis = round(360 / step * np.sin(i * step * np.pi / 180))
-            num_phis = max(num_phis, 2)
+            num_phis = round(360 / step * np.sin(theta_ * np.pi / 180))
+            num_phis = int(max(num_phis, 1))
+            phis = np.linspace(0, 360, num_phis + 1)[:-1]
 
-            phis = np.linspace(0, 360, num_phis)[:-1]
             ttl_phis += len(phis)
             # print(len(phis))
             for j, phi_ in enumerate(phis):
                 for k, psi_ in enumerate(psis):
+                    if theta_ == 0 or theta_ == 180:
+                        if phi_  > 0:
+                            break
                     if theta_ == 0 or theta_ == 180:
                         psi_ = phi_
                         phi_ = 0
@@ -129,10 +132,9 @@ def main(
             position=(0.0, 0.0, 0.0),
         )
 
-    def draw():
+    def draw(step=30):
 
         r = 2
-        step = 30
         thetas = np.arange(0, 180 + step, step)
         psis = np.arange(0, 360, step) # roll
 
@@ -142,10 +144,9 @@ def main(
         ttl_phis = 0
         # print(thetas)
         for i, theta_ in enumerate(thetas):
-            num_phis = round(360 / step * np.sin(i * step * np.pi / 180))
-            num_phis = max(num_phis, 2)
-
-            phis = np.linspace(0, 360, num_phis)[:-1]
+            num_phis = round(360 / step * np.sin(theta_ * np.pi / 180))
+            num_phis = int(max(num_phis, 1))
+            phis = np.linspace(0, 360, num_phis + 1)[:-1]
             ttl_phis += len(phis)
             # print(len(phis))
             # print(f"{theta_}: {180 / step * np.sin(i * step * np.pi / 180)}")
@@ -159,7 +160,7 @@ def main(
                 position, rotation = get_pos_rot(theta_, phi_, psi_)
 
                 server.scene.add_camera_frustum(
-                    f"consistent/camera_{theta_}_{phi_}",
+                    f"consistent_{step}/camera_{theta_}_{phi_}",
                     fov=np.arctan2(height / 2, f),
                     aspect=width / height,
                     scale=0.05,
@@ -201,8 +202,10 @@ def main(
         
         
         
-    draw()
-    draw2()
+    draw(step=10)
+    # draw(step=15)
+    draw(step=20)
+    # draw2()
     while True:
         # gui_theta.on_update(lambda _: draw())
         # gui_phi.on_update(lambda _: draw())
