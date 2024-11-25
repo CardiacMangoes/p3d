@@ -15,3 +15,6 @@ In this directory run
 ```bash
 pip install -e .
 ```
+
+Viewpoint Comparison: `analysis.ipynb`
+Generative Comparison: `test_models.ipynb`
