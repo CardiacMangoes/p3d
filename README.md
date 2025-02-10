@@ -16,5 +16,11 @@ In this directory run
 pip install -e .
 ```
 
+## Render Viewpoints
+
+```bash
+python p3d/scripts/viser_render.py [file path to obj]
+```
+
 Viewpoint Comparison: `analysis.ipynb`
 Generative Comparison: `test_models.ipynb`

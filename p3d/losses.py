@@ -1,11 +1,10 @@
 import torch
 
-import lpips
 from transformers import AutoImageProcessor, AutoModel, CLIPProcessor, CLIPModel
+import lpips
 
 
 loss_fn_alex = lpips.LPIPS(net='alex')
-
 
 def calc_l2_losses(ref, tests):
     """get l2 loss of tests compared with ref
@@ -24,6 +23,5 @@ def calc_lpips_losses(ref, tests):
         ref (torch.tensor): reference image (h, w, 3)
         tests (torch.tensor): comparison images (batch, h, w, 3)
     """
-
     lpips_losses = loss_fn_alex(tests.permute(0, 3, 1, 2)* 2 - 1, ref.unsqueeze(0).permute(0, 3, 1, 2) * 2 - 1)
     return lpips_losses
